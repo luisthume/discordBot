@@ -39,20 +39,21 @@ services:
           - uwsgi.local
 
   db:
-    image: mariadb:10.1
+    image: tobi312/rpi-postgresql:latest
     environment:
       MYSQL_USER: 'admin'
       MYSQL_PASSWORD: 'admin'
       MYSQL_ROOT_PASSWORD: 'root'
       MYSQL_DATABASE: 'discord'
     ports:
-      - "3306:3306"
+      - "5432:5432"
     networks:
       web-bridge:
         aliases:
           - mysql.local
     volumes:
       - .data/mysql:/var/lib/mysql
+    restart: always    
         
 networks:
   web-bridge:

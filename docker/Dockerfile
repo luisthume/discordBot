@@ -3,8 +3,8 @@ FROM python:3.7-slim
 # Instala dependencias
 RUN apt update &&\
     apt install -y gcc pkg-config openssl libcurl4-openssl-dev libssl-dev \
-                   build-essential libmariadb-dev libssl-dev libffi-dev python3-dev \
-                   unixodbc-dev
+                   build-essential libssl-dev  libffi-dev python3-dev \
+                   unixodbc-dev postgresql postgresql-contrib
 
 # Define novo diretorio de trabalho
 WORKDIR /app
