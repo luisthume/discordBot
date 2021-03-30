@@ -1,0 +1,10 @@
+FROM nginx:alpine
+WORKDIR /usr/share/nginx/html
+
+# Copia arquivos de configuração do NGINX
+COPY ./docker/default.conf /etc/nginx/conf.d/default.conf
+COPY ./docker/uwsgi_params /etc/nginx/conf.d/uwsgi_params
+
+# Copia arquivos estaticos da aplicação
+COPY ./static/ /usr/share/nginx/html/static/
+
