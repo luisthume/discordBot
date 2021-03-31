@@ -39,12 +39,12 @@ services:
           - uwsgi.local
 
   db:
-    image: tobi312/rpi-postgresql:latest
+    image: postgres:latest
     environment:
-      MYSQL_USER: 'admin'
-      MYSQL_PASSWORD: 'admin'
-      MYSQL_ROOT_PASSWORD: 'root'
-      MYSQL_DATABASE: 'discord'
+      POSTGRES_USER: 'admin'
+      POSTGRES_PASSWORD: 'admin'
+      POSTGRES_ROOT_PASSWORD: 'root'
+      POSTGRES_DATABASE: 'discord'
     ports:
       - "5432:5432"
     networks:
@@ -52,7 +52,7 @@ services:
         aliases:
           - mysql.local
     volumes:
-      - .data/mysql:/var/lib/mysql
+      - .data/postgres:/var/lib/postgres
     restart: always    
         
 networks:
