@@ -82,7 +82,7 @@ DATABASES = {
         'HOST': 'mysql.local',
         'USER': 'admin',
         'PASSWORD': 'admin',
-        'PORT': 3306
+        'PORT': 5432
     }
 }
 
